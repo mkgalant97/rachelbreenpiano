@@ -179,7 +179,7 @@ def build_events(events):
   <div class="tabs"><a href="/concerts/">Upcoming Performances</a><a class="inactive" href="/past-performances/">Past Performances</a></div>
   {note}
   <ul class="event-list upcoming">{rows}</ul>
-</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/concerts-bg.jpg) center/cover no-repeat}</style>\n', scripts=hide_past)
+</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/concerts-bg.jpg) center center/1792px 828px no-repeat}</style>\n', scripts=hide_past)
 
     rows = "".join(event_row(x) for x in past)
     page("/past-performances/", "Past Performances", f"""<section class="concerts">
