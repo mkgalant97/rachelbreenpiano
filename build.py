@@ -177,7 +177,7 @@ def build_events(events):
   <div class="tabs"><a href="/concerts/">Upcoming Performances</a><a class="inactive" href="/past-performances/">Past Performances</a></div>
   {note}
   <ul class="event-list upcoming">{rows}</ul>
-</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/concerts-bg.jpg) center/cover fixed}</style>\n', scripts=hide_past)
+</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/concerts-bg.jpg) center/cover no-repeat}</style>\n', scripts=hide_past)
 
     rows = "".join(event_row(x) for x in past)
     page("/past-performances/", "Past Performances", f"""<section class="concerts">
@@ -236,7 +236,7 @@ def build_also_about(c):
     page("/also-about/", "Also About ", f"""<section class="also">
   <div><h1>Also a Biography</h1>{paras(c["also_biography"])}<p class="pull">{e(c["also_quote"])}</p></div>
   <div class="photos">{img("also-1.jpg", "")}{img("also-2.jpg", "")}{img("also-3.jpg", "")}</div>
-</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/also-bg.jpg) center/cover fixed}</style>\n')
+</section>""", extra_head='<style>main{background:#1b1c1e url(/assets/images/also-bg.jpg) center/cover no-repeat}</style>\n')
 
 
 def build_news(items):
@@ -285,7 +285,7 @@ location.href='mailto:{CONTACT_EMAIL}?subject='+encodeURIComponent('Website mess
 f.querySelector('.thanks').style.display='inline';}});
 </script>
 """
-    page("/contact/", "Contact", f"""<section class="contact bg-photo" style="background-image:url(/assets/images/contact-bg.jpg)">
+    page("/contact/", "Contact", f"""<section class="contact" style="background-image:url(/assets/images/contact-bg.jpg)">
   <div class="intro">
     <h1>Contact</h1>
     <p>To contact Rachel directly, please use the contact form on this page, or write to <a href="mailto:rachel@rachelbreenpiano.com">rachel@rachelbreenpiano.com</a>.</p>
