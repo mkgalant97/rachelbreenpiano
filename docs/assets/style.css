@@ -1,0 +1,196 @@
+/* Rachel Breen, Pianist — site styles */
+:root {
+  --bg: #1b1c1e;
+  --bg-deep: #000;
+  --text: #fff;
+  --muted: #b0b0b0;
+  --gold: #f2d5a0;
+  --gold-nav: #d8b98a;
+  --card: #3a3b3e;
+  --line: #e5e5e5;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --round: "Avenir Next", Avenir, "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg-deep); }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--sans); font-weight: 300; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(27, 28, 30, .96);
+  height: 94px; display: flex; align-items: center;
+  padding: 0 40px 0 180px;
+}
+.site-header .home-link { font-size: 15px; text-decoration: none; letter-spacing: .02em; }
+.site-header nav { margin-left: auto; display: flex; align-items: center; }
+.site-header nav > ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.site-header nav li { position: relative; }
+.site-header nav a {
+  display: block; padding: 10px 27px; font-size: 15px; letter-spacing: .06em;
+  text-decoration: none; transition: color .2s;
+}
+.site-header nav a:hover, .site-header nav a.active { color: var(--gold-nav); }
+.site-header nav .sub {
+  display: none; position: absolute; top: 100%; left: 0; min-width: 190px;
+  list-style: none; margin: 0; padding: 6px 0; background: var(--bg);
+}
+.site-header nav li:hover .sub, .site-header nav li:focus-within .sub { display: block; }
+.social { display: flex; gap: 12px; margin-left: 14px; }
+.site-header nav .social a { display: block; width: 22px; height: 22px; padding: 0; }
+.social svg { width: 100%; height: 100%; }
+.menu-toggle {
+  display: none; margin-left: auto; background: none; border: 0; color: #fff;
+  font-size: 28px; cursor: pointer; padding: 6px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer { background: var(--bg-deep); padding: 30px 0 60px 160px; font-size: 12px; }
+
+/* ---------- Generic ---------- */
+main { min-height: 60vh; }
+.bg-photo { background-size: cover; background-position: center; background-attachment: fixed; }
+h1, h2 { font-weight: 400; margin: 0; }
+
+/* ---------- Home ---------- */
+.hero {
+  height: 1574px; background-size: cover; background-position: center top;
+  padding: 215px 0 0 9.4vw;
+}
+.hero .name { font-size: 60px; font-weight: 300; line-height: normal; margin: 0 0 18px; }
+.hero .role { font-size: 22px; letter-spacing: .6em; line-height: 1.2; margin: 0; }
+.hero .name, .hero .role { animation: float-in 1.2s cubic-bezier(.445, .05, .55, .95) backwards; }
+@keyframes float-in { from { opacity: 0; transform: translateY(60px); } }
+@media (prefers-reduced-motion: reduce) { .hero .name, .hero .role { animation: none; } }
+
+/* ---------- About ---------- */
+.about { max-width: 1100px; margin: 0 auto; padding: 120px 40px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.about h1 { font-size: 34px; margin-bottom: 28px; }
+.about .bio p { font-size: 15px; margin: 0 0 1.2em; }
+.about .photos { display: flex; flex-direction: column; gap: 40px; padding-top: 40px; }
+.about .photos .rule { height: 2px; background: linear-gradient(90deg, var(--gold) 0 14%, #000 14% 46%, var(--gold) 46% 48%, #000 48% 58%, var(--gold) 58%); margin-bottom: -4px; }
+.quotes { max-width: 1240px; margin: 0 auto; padding: 40px 20px 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
+.quotes .mark { font-family: Georgia, serif; font-size: 110px; line-height: .8; height: 60px; color: var(--gold); font-weight: 700; }
+.quotes h3 { font-size: 21px; font-weight: 400; margin: 30px 0 6px; }
+.quotes p { font-size: 16px; line-height: 1.9; margin: 0 auto; max-width: 180px; }
+
+/* ---------- Also About ---------- */
+.also { max-width: 1000px; margin: 0 auto; padding: 18px 40px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.also h1 { font-size: 32px; margin-bottom: 14px; }
+.also p { font-size: 14px; line-height: 1.6; margin: 0 0 1.6em; }
+.also .pull { font-size: 21px; line-height: 1.45; font-weight: 400; }
+.also .photos { display: flex; flex-direction: column; gap: 40px; }
+
+/* ---------- News ---------- */
+.news { max-width: 1000px; margin: 0 auto; padding: 30px 40px 40px; }
+.news h1 { font-size: 32px; margin: 0 0 30px; }
+.news-grid { columns: 3 280px; column-gap: 8px; }
+.news-card {
+  break-inside: avoid; display: block; margin-bottom: 8px;
+  border-radius: 10px; overflow: hidden; transition: transform .2s;
+}
+.news-card:hover { transform: translateY(-2px); }
+.news-card img { width: 100%; }
+.news-card .cap { padding: 12px 12px 14px; font-family: var(--round); font-weight: 600; font-size: 15px; line-height: 1.25; }
+.news-card .site { font-weight: 400; font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- Concerts ---------- */
+.concerts { max-width: 770px; margin: 0 auto; padding: 100px 0 60px; }
+.tabs { display: flex; justify-content: center; gap: 84px; font-size: 32px; margin-bottom: 60px; }
+.tabs a { text-decoration: none; }
+.tabs a.inactive { color: var(--gold); font-style: italic; }
+.note { text-align: center; font-size: 12px; font-weight: 400; margin-bottom: 44px; }
+.event-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.event-list li { border-bottom: 1px solid var(--line); padding: 40px 2px 44px; display: flex; align-items: center; gap: 20px; font-family: var(--round); }
+.event-list .info { flex: 1; }
+.event-list .date { font-size: 13px; font-weight: 600; }
+.event-list .title { font-size: 24px; font-weight: 600; line-height: 1.2; }
+.event-list .title a { text-decoration: none; }
+.event-list .loc { font-size: 16px; font-weight: 400; }
+.btn {
+  display: inline-block; background: var(--gold); color: #1b1c1e; text-decoration: none;
+  font-family: var(--round); font-size: 15px; padding: 7px 19px; white-space: nowrap; border: 0; cursor: pointer;
+}
+.btn:hover { background: #fff; }
+.empty { text-align: center; padding: 40px 0; font-family: var(--round); }
+
+/* ---------- Event details ---------- */
+.event { max-width: 980px; margin: 0 auto; padding: 70px 40px 80px; font-family: var(--round); }
+.event .back { font-size: 14px; text-decoration: none; color: var(--gold); }
+.event h1 { font-size: 44px; font-weight: 600; margin: 24px 0 6px; line-height: 1.15; }
+.event .when { font-size: 18px; margin-bottom: 30px; }
+.event .hero-img { width: 100%; max-height: 560px; object-fit: cover; margin: 30px 0 50px; }
+.event h2 { font-size: 22px; font-weight: 600; margin: 40px 0 10px; }
+.event .desc p { margin: 0 0 1em; }
+.event .share { display: flex; gap: 18px; }
+.event .share a { color: var(--gold); }
+
+/* ---------- Media ---------- */
+.media { max-width: 840px; margin: 0 auto; padding: 22px 20px 0; }
+.media h1 { font-size: 52px; margin-bottom: 6px; }
+.video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-bottom: 6px; }
+.yt { position: relative; aspect-ratio: 16/9; background: #000 center/cover no-repeat; cursor: pointer; border: 0; padding: 0; width: 100%; color: #fff; text-align: left; }
+.yt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.7), transparent 35%); }
+.yt .t { position: absolute; z-index: 1; top: 12px; left: 16px; right: 16px; font: 600 15px/1.25 Roboto, Arial, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.yt .play { position: absolute; z-index: 1; left: 50%; top: 50%; width: 68px; height: 48px; transform: translate(-50%, -50%); }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2; }
+.photos-band { background: var(--bg-deep); }
+.photo-grid { columns: 2; column-gap: 3px; padding-bottom: 60px; }
+.photo-grid img { width: 100%; margin-bottom: 3px; break-inside: avoid; cursor: zoom-in; }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.94); display: none; align-items: center; justify-content: center; z-index: 100; cursor: zoom-out; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 94vw; max-height: 92vh; }
+
+/* ---------- Contact ---------- */
+.contact { min-height: 770px; align-items: start; padding: 40px 120px 60px 96px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
+.contact h1 { font-size: 50px; margin-bottom: 34px; }
+.contact .intro p { font-size: 14px; margin: 0 0 1.4em; }
+.contact .intro a { text-decoration: none; }
+.contact form { justify-self: end; width: 100%; max-width: 362px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 20px; padding-top: 38px; align-content: start; }
+.contact label { display: flex; flex-direction: column; font-size: 12px; font-weight: 400; gap: 4px; }
+.contact label.full { grid-column: 1 / -1; }
+.contact input, .contact textarea {
+  background: #000; color: #fff; border: 0; border-bottom: 1px solid #fff; height: 40px;
+  font: inherit; font-size: 14px; padding: 6px 8px;
+}
+.contact textarea { height: 90px; resize: vertical; }
+.contact input:focus, .contact textarea:focus { outline: 1px solid var(--gold); }
+.contact .submit-row { grid-column: 1 / -1; display: flex; justify-content: flex-end; align-items: center; gap: 16px; }
+.contact button { background: transparent; color: #fff; border: 1px solid #fff; width: 126px; height: 36px; font: inherit; font-size: 14px; cursor: pointer; }
+.contact button:hover { background: #fff; color: #000; }
+.contact .thanks { font-size: 14px; display: none; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .site-header { padding: 0 16px; height: 64px; }
+  .menu-toggle { display: block; }
+  .site-header nav { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: flex-start; padding: 10px 16px 20px; }
+  .site-header.open nav { display: flex; }
+  .site-header nav > ul { flex-direction: column; width: 100%; }
+  .site-header nav a { padding: 10px 0; }
+  .site-header nav .sub { display: block; position: static; padding: 0 0 0 16px; }
+  .social { margin: 12px 0 0; }
+  .site-footer { padding: 24px 16px 40px; }
+  .hero { height: 80vh; background-position: 45% top; padding: 60px 16px 0; }
+  .hero .name { font-size: 40px; }
+  .hero .role { font-size: 16px; }
+  .about, .also, .contact { grid-template-columns: 1fr; padding: 40px 16px; }
+  .about .photos { padding-top: 0; }
+  .quotes { grid-template-columns: 1fr 1fr; }
+  .news, .media { padding-left: 16px; padding-right: 16px; }
+  .concerts { padding: 50px 16px; }
+  .tabs { gap: 8px 24px; font-size: 22px; flex-wrap: wrap; text-align: center; }
+  body { overflow-x: hidden; }
+  .event-list li { flex-direction: column; align-items: flex-start; }
+  .event { padding: 40px 16px; }
+  .event h1 { font-size: 32px; }
+  .video-grid { grid-template-columns: 1fr; }
+  .contact form { justify-self: stretch; max-width: none; }
+  .bg-photo { background-attachment: scroll; }
+}
