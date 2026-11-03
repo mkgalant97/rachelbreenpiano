@@ -20,6 +20,8 @@ OUT = ROOT / "docs"
 DATA = ROOT / "data"
 SITE_URL = "https://www.rachelbreenpiano.com"
 YEAR = datetime.now().year
+# Changes whenever style.css changes, so browsers fetch the new styles instead of a cached copy.
+CSS_VERSION = __import__("hashlib").md5((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:8]
 
 # Where the site lives. While it's a preview at https://mkgalant97.github.io/rachelbreenpiano/
 # this is "/rachelbreenpiano". When the real domain is switched over, set it to "" and set
@@ -98,7 +100,7 @@ def page(path, title, body, active=None, description="", extra_head="", scripts=
 <meta property="og:image" content="{SITE_URL}/assets/images/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v={CSS_VERSION}">
 {extra_head}</head>
 <body{f' class="{body_class}"' if body_class else ""}>
 {header(active or path)}
