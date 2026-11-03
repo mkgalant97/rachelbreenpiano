@@ -19,8 +19,8 @@ The site that gets published is generated into `docs/`. **Don't edit `docs/` by 
 ## Making a change by hand
 
 1. Edit a file in `data/`.
-2. Run `python3 build.py`.
-3. Preview the site: run `python3 -m http.server 8000 --directory docs`, then open http://localhost:8000.
+2. Run `python3 build.py --serve` and open the address it prints. Press Ctrl+C to stop the preview.
+3. If it looks right, publish it (step 4).
 4. Publish the change: `git add -A && git commit -m "Describe the change" && git push`. GitHub Pages updates the live site within about a minute.
 
 The site is hosted on GitHub Pages from the `docs/` folder of https://github.com/mkgalant97/rachelbreenpiano. The preview address is https://mkgalant97.github.io/rachelbreenpiano/.

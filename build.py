@@ -6,7 +6,7 @@ Edit the files in data/ (most often data/events.json), then run:
     python3 build.py
 
 The finished site is written to the docs/ folder. That folder is what gets published.
-To preview it locally, run:  python3 -m http.server 8000 --directory docs
+To build and preview it locally, run:  python3 build.py --serve
 """
 import html
 import json
@@ -322,5 +322,21 @@ def main():
     print(f"Built site in {OUT}")
 
 
+def serve(port=8000):
+    """Preview the built site locally at the same address layout as the live site."""
+    import functools, http.server, sys, tempfile
+    root = Path(tempfile.mkdtemp())
+    if BASE_PATH:
+        (root / BASE_PATH.strip("/")).symlink_to(OUT.resolve())
+    else:
+        root = OUT
+    handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=str(root))
+    print(f"Preview at http://localhost:{port}{BASE_PATH}/  (Ctrl+C to stop)")
+    http.server.ThreadingHTTPServer(("", port), handler).serve_forever()
+
+
 if __name__ == "__main__":
+    import sys
     main()
+    if "--serve" in sys.argv:
+        serve()
