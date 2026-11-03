@@ -62,7 +62,7 @@ h1, h2 { font-weight: 400; margin: 0; }
 .hero {
   height: 1555px; background-size: cover; background-position: center center;
   border-bottom: 8px solid #000;
-  padding: 215px 0 0 9.4vw;
+  padding: 128px 0 0 9.4vw;
 }
 .hero .name { font-size: 60px; font-weight: 300; line-height: normal; margin: 0 0 18px; }
 .hero .role { font-size: 22px; letter-spacing: .6em; line-height: 1.2; margin: 0; }
