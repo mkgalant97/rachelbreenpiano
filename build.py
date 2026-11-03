@@ -82,7 +82,7 @@ def header(active):
 </header>"""
 
 
-def page(path, title, body, active=None, description="", extra_head="", scripts=""):
+def page(path, title, body, active=None, description="", extra_head="", scripts="", body_class=""):
     full_title = "Rachel Breen, Pianist" if title is None else f"{title} | Rachel Breen"
     desc = description or "Official website of American pianist Rachel Breen."
     doc = f"""<!doctype html>
@@ -100,7 +100,7 @@ def page(path, title, body, active=None, description="", extra_head="", scripts=
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 {extra_head}</head>
-<body>
+<body{f' class="{body_class}"' if body_class else ""}>
 {header(active or path)}
 <main>
 {body}
@@ -214,10 +214,13 @@ def build_events(events):
 # ---------------------------------------------------------------- other pages
 
 def build_home():
-    page("/", None, """<section class="hero" style="background-image:url(/assets/images/home-hero.jpg)">
+    # As on the original: the top photo, a thin black divider, then a second (darker) photo
+    # filling the page background, which shows through behind the footer.
+    page("/", None, """<section class="hero" style="background-image:url(/assets/images/home-top.jpg)">
   <h1 class="name">Rachel Breen</h1>
   <p class="role">PIANIST</p>
-</section>""", active="/")
+</section>""", active="/", body_class="home",
+         extra_head='<style>html{background:#000 url(/assets/images/home-page-bg.jpg) center top/cover no-repeat fixed}body.home{background:transparent}</style>\n')
 
 
 def build_about(c):

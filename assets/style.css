@@ -60,7 +60,8 @@ h1, h2 { font-weight: 400; margin: 0; }
 
 /* ---------- Home ---------- */
 .hero {
-  height: 1574px; background-size: cover; background-position: center top;
+  height: 1555px; background-size: cover; background-position: center center;
+  border-bottom: 8px solid #000;
   padding: 215px 0 0 9.4vw;
 }
 .hero .name { font-size: 60px; font-weight: 300; line-height: normal; margin: 0 0 18px; }
@@ -68,6 +69,9 @@ h1, h2 { font-weight: 400; margin: 0; }
 .hero .name, .hero .role { animation: float-in 1.2s cubic-bezier(.445, .05, .55, .95) backwards; }
 @keyframes float-in { from { opacity: 0; transform: translateY(60px); } }
 @media (prefers-reduced-motion: reduce) { .hero .name, .hero .role { animation: none; } }
+
+body.home main { min-height: 0; }
+body.home .site-footer { background: rgba(0, 0, 0, .55); }
 
 /* ---------- About ---------- */
 .about { max-width: 1100px; margin: 0 auto; padding: 120px 40px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
@@ -195,4 +199,5 @@ h1, h2 { font-weight: 400; margin: 0; }
 
   .contact form { justify-self: stretch; max-width: none; }
   .bg-photo { background-attachment: scroll; }
+
 }
