@@ -249,16 +249,17 @@ def build_news(items):
 
 
 def build_media(m):
-    play = '<svg class="play" viewBox="0 0 68 48"><path fill="#f00" d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.6 8.6 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.6 8.6 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.6 8.6 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z"/><path fill="#fff" d="M45 24 27 14v20z"/></svg>'
+    # Real YouTube players, so each video shows YouTube's own title bar, Share,
+    # Watch later and "Watch on YouTube" controls, as on the original site.
     videos = "".join(
-        f'<button class="yt" data-id="{v["id"]}" style="background-image:url(https://i.ytimg.com/vi/{v["id"]}/hqdefault.jpg)" aria-label="Play {e(v["title"])}"><span class="t">{e(v["title"])}</span>{play}</button>'
+        f'<div class="yt"><iframe src="https://www.youtube.com/embed/{v["id"]}" title="{e(v["title"])}" loading="lazy" '
+        f'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" '
+        f'referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>'
         for v in m["videos"]
     )
     photos = "".join(img(p, "") for p in m["photos"])
     script = """<div class="lightbox" onclick="this.classList.remove('open')"><img alt=""></div>
 <script>
-document.querySelectorAll('.yt').forEach(function(b){b.addEventListener('click',function(){
-  b.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';});});
 var lb=document.querySelector('.lightbox');
 document.querySelectorAll('.photo-grid img').forEach(function(i){i.addEventListener('click',function(){lb.querySelector('img').src=i.src;lb.classList.add('open');});});
 </script>

@@ -132,14 +132,11 @@ h1, h2 { font-weight: 400; margin: 0; }
 .event .share a { color: var(--gold); }
 
 /* ---------- Media ---------- */
-.media { max-width: 840px; margin: 0 auto; padding: 22px 20px 0; }
-.media h1 { font-size: 52px; margin-bottom: 6px; }
+.media { max-width: 1020px; margin: 0 auto; padding: 24px 20px 0; }
+.media h1 { font-size: 62px; line-height: 1.1; margin-bottom: 10px; }
 .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-bottom: 6px; }
-.yt { position: relative; aspect-ratio: 16/9; background: #000 center/cover no-repeat; cursor: pointer; border: 0; padding: 0; width: 100%; color: #fff; text-align: left; }
-.yt::after { content: ""; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,.7), transparent 35%); }
-.yt .t { position: absolute; z-index: 1; top: 12px; left: 16px; right: 16px; font: 600 15px/1.25 Roboto, Arial, sans-serif; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.yt .play { position: absolute; z-index: 1; left: 50%; top: 50%; width: 68px; height: 48px; transform: translate(-50%, -50%); }
-.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; z-index: 2; }
+.yt { position: relative; aspect-ratio: 16/9; background: #000; }
+.yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .photos-band { background: var(--bg-deep); }
 .photo-grid { columns: 2; column-gap: 3px; padding-bottom: 60px; }
 .photo-grid img { width: 100%; margin-bottom: 3px; break-inside: avoid; cursor: zoom-in; }
@@ -184,6 +181,7 @@ h1, h2 { font-weight: 400; margin: 0; }
   .about .photos { padding-top: 0; }
   .quotes { grid-template-columns: 1fr 1fr; }
   .news, .media { padding-left: 16px; padding-right: 16px; }
+  .media h1 { font-size: 44px; }
   .concerts { padding: 50px 16px; }
   .tabs { gap: 8px 24px; font-size: 22px; flex-wrap: wrap; text-align: center; }
   body { overflow-x: hidden; }
