@@ -145,21 +145,21 @@ h1, h2 { font-weight: 400; margin: 0; }
 .lightbox img { max-width: 94vw; max-height: 92vh; }
 
 /* ---------- Contact ---------- */
-.contact { min-height: 770px; align-items: start; background-color: var(--bg); background-size: cover; background-position: center 20%; background-repeat: no-repeat; padding: 40px 120px 60px 96px; display: grid; grid-template-columns: 300px 1fr; gap: 40px; }
-.contact h1 { font-size: 50px; margin-bottom: 34px; }
-.contact .intro p { font-size: 14px; margin: 0 0 1.4em; }
+.contact { min-height: 920px; align-items: start; background-color: var(--bg); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; padding: 58px 147px 60px 116px; display: grid; grid-template-columns: 330px 1fr; gap: 40px; }
+.contact h1 { font-size: 62px; margin-bottom: 44px; }
+.contact .intro p { font-size: 16px; line-height: 1.5; margin: 0 0 1.5em; padding-left: 3px; }
 .contact .intro a { text-decoration: none; }
-.contact form { justify-self: end; width: 100%; max-width: 362px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 20px; padding-top: 38px; align-content: start; }
-.contact label { display: flex; flex-direction: column; font-size: 12px; font-weight: 400; gap: 4px; }
+.contact form { justify-self: end; width: 100%; max-width: 433px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px 24px; padding-top: 62px; }
+.contact label { display: flex; flex-direction: column; font-size: 14px; font-weight: 400; gap: 4px; }
 .contact label.full { grid-column: 1 / -1; }
 .contact input, .contact textarea {
-  background: #000; color: #fff; border: 0; border-bottom: 1px solid #fff; height: 40px;
-  font: inherit; font-size: 14px; padding: 6px 8px;
+  background: #000; color: #fff; border: 0; border-bottom: 1px solid #fff; height: 48px;
+  font: inherit; font-size: 15px; padding: 6px 8px;
 }
-.contact textarea { height: 90px; resize: vertical; }
+.contact textarea { height: 106px; resize: vertical; }
 .contact input:focus, .contact textarea:focus { outline: 1px solid var(--gold); }
-.contact .submit-row { grid-column: 1 / -1; display: flex; justify-content: flex-end; align-items: center; gap: 16px; }
-.contact button { background: transparent; color: #fff; border: 1px solid #fff; width: 126px; height: 36px; font: inherit; font-size: 14px; cursor: pointer; }
+.contact .submit-row { grid-column: 1 / -1; display: flex; justify-content: flex-end; align-items: center; gap: 16px; margin-top: -30px; }
+.contact button { background: transparent; color: #fff; border: 1px solid #fff; width: 150px; height: 42px; font: inherit; font-size: 16px; cursor: pointer; }
 .contact button:hover { background: #fff; color: #000; }
 .contact .thanks { font-size: 14px; display: none; }
 
