@@ -230,7 +230,7 @@ def build_about(c):
     )
     page("/about/", "About", f"""<section class="about">
   <div class="bio"><h1>Biography</h1>{bio}</div>
-  <div class="photos">{img("about-1.jpg", "Rachel Breen")}<div class="rule"></div>{img("about-2.jpg", "Rachel Breen performing")}</div>
+  <div class="photos">{img("about-1.jpg", "Rachel Breen", "p1")}{img("about-2.jpg", "Rachel Breen performing", "p2")}</div>
 </section>
 <section class="quotes">{quotes}</section>""", description="Biography of American pianist Rachel Breen, laureate of the 2025 Queen Elisabeth Competition.")
 

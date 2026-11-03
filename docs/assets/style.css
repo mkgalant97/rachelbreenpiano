@@ -74,11 +74,15 @@ body.home main { min-height: 0; }
 body.home .site-footer { background: rgba(0, 0, 0, .55); }
 
 /* ---------- About ---------- */
-.about { max-width: 1100px; margin: 0 auto; padding: 120px 40px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.about { display: flex; justify-content: space-between; gap: 48px; padding: 0 100px 60px 138px; }
+.about .bio { flex: 0 1 420px; padding-top: 150px; }
 .about h1 { font-size: 34px; margin-bottom: 28px; }
 .about .bio p { font-size: 15px; margin: 0 0 1.2em; }
-.about .photos { display: flex; flex-direction: column; gap: 40px; padding-top: 40px; }
-.about .photos .rule { height: 2px; background: linear-gradient(90deg, var(--gold) 0 14%, #000 14% 46%, var(--gold) 46% 48%, #000 48% 58%, var(--gold) 58%); margin-bottom: -4px; }
+.about .photos { flex: 0 1 677px; display: flex; flex-direction: column; gap: 42px; padding-top: 84px; }
+.about .photos img { width: 100%; object-fit: cover; }
+.about .photos .p1 { max-width: 674px; aspect-ratio: 674 / 514; }
+/* As on the original: cropped slightly so the thin dark strip on the photo's right edge is hidden. */
+.about .photos .p2 { aspect-ratio: 677 / 457; object-position: left center; }
 .quotes { max-width: 1240px; margin: 0 auto; padding: 40px 20px 80px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
 .quotes .mark { font-family: Georgia, serif; font-size: 110px; line-height: .8; height: 60px; color: var(--gold); font-weight: 700; }
 .quotes h3 { font-size: 21px; font-weight: 400; margin: 30px 0 6px; }
@@ -185,8 +189,9 @@ body.home .site-footer { background: rgba(0, 0, 0, .55); }
   .hero { height: 80vh; background-position: 45% top; padding: 60px 16px 0; }
   .hero .name { font-size: 40px; }
   .hero .role { font-size: 16px; }
-  .about, .also, .contact { grid-template-columns: 1fr; padding: 40px 16px; }
-  .about .photos { padding-top: 0; }
+  .also, .contact { grid-template-columns: 1fr; padding: 40px 16px; }
+  .about { flex-direction: column; padding: 40px 16px; }
+  .about .bio, .about .photos { flex: none; padding-top: 0; }
   .quotes { grid-template-columns: 1fr 1fr; }
   .news, .media { padding-left: 16px; padding-right: 16px; }
   .media h1 { font-size: 44px; }
