@@ -21,7 +21,15 @@ The site that gets published is generated into `docs/`. **Don't edit `docs/` by 
 1. Edit a file in `data/`.
 2. Run `python3 build.py`.
 3. Preview the site: run `python3 -m http.server 8000 --directory docs`, then open http://localhost:8000.
-4. Publish the change (once hosting is set up, this is a `git push`).
+4. Publish the change: `git add -A && git commit -m "Describe the change" && git push`. GitHub Pages updates the live site within about a minute.
+
+The site is hosted on GitHub Pages from the `docs/` folder of https://github.com/mkgalant97/rachelbreenpiano. The preview address is https://mkgalant97.github.io/rachelbreenpiano/.
+
+## Moving to the real domain
+
+1. In `build.py`, set `BASE_PATH = ""` and `CUSTOM_DOMAIN = "www.rachelbreenpiano.com"`, then rebuild and push.
+2. In the GitHub repo, go to Settings → Pages and enter the custom domain there too.
+3. At the domain registrar, point `www` to `mkgalant97.github.io` with a CNAME record, and add GitHub's A records for the bare domain.
 
 ## Concerts
 
